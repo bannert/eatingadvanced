@@ -1,14 +1,7 @@
 <?php
 echo '<h1>eatingadvanced</h1>';
 
-$mysqli=mysqli_connect("localhost", "root", "miezum22", "eatingadvanced");
-if (mysqli_connect_errno())
-  {
-  //echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-  
-$dbc = mysqli_connect(localhost,root,miezum22);
-$dbs = mysqli_select_db($dbc, eatingadvanced);
+$pdo = new PDO('mysql:host=localhost;dbname=eatingadvanced', 'root', 'miezum22');
 
 $date = date('d-m-Y',time());
 echo $date;
@@ -19,14 +12,18 @@ $week = $datew->format("W");
 echo "<br/>";
 echo "Wochennummer: $week";
 
-
-
-$check = "SELECT * FROM menu WHERE KW_ID>= $week";
-$result = mysqli_query($mysqli,$check);
-$rowcount=mysqli_num_rows($result);
+$sth = $pdo->prepare("SELECT * FROM menu WHERE KW_ID>= $week");
+$sth->execute();
+$result = $sth->fetchAll();
 echo "<br/>";
-echo $rowcount;
+echo $result[0]['M_ID'];
+echo $result[0]['KW_ID'];
+echo $result[0]['Bezeichnung'];
+echo $result[0]['Tag'];
 echo "<br/>";
-$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-echo $row["Bezeichnung"];
+echo $result[1]['M_ID'];
+echo $result[1]['KW_ID'];
+echo $result[1]['Bezeichnung'];
+echo $result[1]['Tag'];
+
 ?>
