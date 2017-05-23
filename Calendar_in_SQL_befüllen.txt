@@ -1,0 +1,90 @@
+	Calendar calendar = GregorianCalendar.getInstance();
+	        		int currentYear = calendar.get(Calendar.YEAR);
+	        		calendar.set(Calendar.YEAR, currentYear);  
+	        		int wochen = calendar.getActualMaximum(Calendar.WEEK_OF_YEAR);
+	        		
+	        		Calendar cal = GregorianCalendar.getInstance();
+	        		for (int i = 0; i < wochen; i++){       		
+	        		
+	        		cal.set( Calendar.WEEK_OF_YEAR, i );				//Woche
+	        		cal.set( Calendar.DAY_OF_WEEK, Calendar.MONDAY );	//Start am Montag
+	        		String tag1 = String.format("%tD",cal) ;      	    //1. Wochentag (Datum)     
+	        		cal.add( Calendar.DAY_OF_WEEK, 6 );					//Tage der Woche (7-1)
+	        		String tag7 = String.format("%tD _ ",cal) ;			//letzter Wochentag (Datum)
+	        		String woche =	tag1+" - "+tag7 ;					//Anfang und Ende der Woche (Datum)
+	        		
+	        		String v = woche.substring(0,woche.indexOf('_'));
+	        	
+	        	try {
+	    			Class.forName("com.mysql.jdbc.Driver").newInstance();
+	    		} catch (Exception e) {
+	    			System.err.println("Treiber konnte nicht geladen werden!");
+	    			System.err.println(e);
+	    			e.printStackTrace();
+//	    			objekt = "Datenbankfehler - ";
+//	    			fehler = "Treiber konnte nicht geladen werden!";
+//	    			fehlercode = " (Code: DB0015)";
+//	    			fehlermeldung();
+	    		}
+	    		System.out.println("Treiber wurde geladen!");
+	    		try {
+	    			conn = DriverManager.getConnection(connectURL, user, pw);
+	    			System.out.println("Verbindung aufgebaut.");
+	    			Statement stmt1 = conn.createStatement();
+	    			// Datenabfrage aufbereiten
+	    				
+	    			int i2 = i+1;
+	    			String query = "SELECT * FROM `wochen` WHERE Wochen_Nr='"+ i2 + "'";
+	    			ResultSet rs = stmt1.executeQuery(query);
+
+	    			ArrayList al = new ArrayList();
+
+	    			while (rs.next()) {
+	    				al.add(rs.getString("Wochen_Nr")); 
+	    				System.out.println(al);
+	    				Statement stmt2 = conn.createStatement();	
+	    			
+	    			String updateString1 = "UPDATE `wochen` SET `Von-Bis` = '"+ v +"' WHERE `Wochen_Nr` = '"+ i2 + "'";
+	    			
+	    			stmt2.executeUpdate(updateString1);
+	    			stmt2.close();
+	    			
+	    			}
+	    			if (al.size() == 0) {
+	    				System.out.println("No results found");
+	    				Statement stmt3 = conn.createStatement();
+	    				// Datenabfrage aufbereiten
+	    				String updateString2 = "INSERT INTO `wochen` (`Wochen_Nr`, `Von-Bis`, `Zuletzt_geändert`) VALUES ("+i2+", '"+ v + "', CURRENT_TIMESTAMP)";
+	    				stmt3.executeUpdate(updateString2);
+	    				stmt3.close();
+	    			}
+	    			rs.close();
+	    			stmt1.close();
+//	    			textField_3.requestFocus();
+//	    			textField_3.selectAll();
+	        		
+	    		} catch (SQLException e) {
+	    			System.err.println("Keine Verbindung möglich!");
+	    			e.printStackTrace();
+	    			System.err.println("SQLException: " + e.getMessage());
+	    			System.err.println("SQLState: " + e.getSQLState());
+	    			System.err.println("VendorError: " + e.getErrorCode());
+//	    			objekt = "Datenbankfehler - ";
+//	    			fehler = "Keine Verbindung möglich!";
+//	    			fehlercode = " (Code: DB0016 _" + " " + "SQLException: "+ e.getMessage();
+//	    			fehlermeldung();
+	    		} finally {
+	    			// Verbindung schließen
+	    			if (conn != null) {
+	    				try {
+	    					conn.close();
+	    				} catch (SQLException e) {
+	    					e.printStackTrace();
+	    				}
+	    			}
+	    		}
+	        	
+	    		}
+	        		
+	        	}
+	        });
