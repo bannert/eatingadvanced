@@ -5,3 +5,4 @@ Benötigt wird:
   - Webseite
   - SQL-Datenbank
   - NFC-Leser an der Essensausgabe
+  - NFC Nutzerkarten
