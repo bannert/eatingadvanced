@@ -6,3 +6,4 @@ Benötigt wird:
   - SQL-Datenbank
   - NFC-Leser an der Essensausgabe
   - NFC Nutzerkarten
+  
