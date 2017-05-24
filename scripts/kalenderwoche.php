@@ -14,9 +14,9 @@ $week_stop = new DateTime();
 
 for ($week_no=1; $week_no<=52; $week_no++){
 	$week_start->setISODate($year,$week_no);
-	$week_start = $week_start->format('d-m-Y');
+	$week_start = $week_start->format('d.m.Y');
 	$week_stop->setISODate($year,$week_no,7);
-	$week_stop = $week_stop->format('d-m-Y');
+	$week_stop = $week_stop->format('d.m.Y');
 	echo $week_start;
 	echo "<br/>";
 	echo $week_stop;
