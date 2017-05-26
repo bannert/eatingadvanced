@@ -9,10 +9,9 @@ and open the template in the editor.
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="stylesheet" href="css/style3.css">
-        <link rel="stylesheet" href="css/style1.css">
-        
+        <link rel="stylesheet" href="css/style1.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style2.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style3.css" type="text/css"/>
     </head>
     <body>
         <div class="header-container">
@@ -30,31 +29,45 @@ and open the template in the editor.
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-
+                
                 <center>
+                    
+                    
+                    
+                    <form name="Login" style="border-style: solid; border-width: 1px; width: 500px">
+                        
                     <header>
-                        <img src="css/pictures/LogoMyMeal (2).PNG" width="96" height="93" alt="LogoMyMeal (2)"/>
                         <h1>Anmelden</h1>
                         <p>Geben Sie ihre Email-Adresse ein:</p>
                     </header>
-                    <input type="text" name="Benuzername/Email" value="Geben Sie " 
-                           style="width:300px; border-color: #e80000; border-style: double"/><br>
+                    <input type="text" name="User/Email" value="" style="width:300px; border-color: #e80000; border-style: double"/><br>
                     <p>Geben Sie ihr Passwort ein:</p>
-                    <input type="password" name="c" value="" 
-                           style="width:300px; border-color: #e80000; border-style: double"/>
+                    <input type="password" name="c" value="" style="width:300px; border-color: #e80000; border-style: double"/>
                     <footer>
                         <a href="home.html" style="font-size: small">Passwort vergessen?</a><br><br>
-                        <input type="submit" value="Weiter" name="Anmelden" 
-                               style="width:300px; height:25px; color: white; background:#e80000; border-style: none"/>   
+                        <input type="submit" value="Anmelden" name="Anmelden" style="width:300px; height:25px; color: white; background:#e80000; border-style: none"/>   
+                        <hr style="width: auto; max-width: 400px;">
+                        <h4>Neu bei EatingAdvanced?</h4>
+                        <input type="submit" value="Erstellen Sie Ihr EatingAdvanced-Konto " name="Anmelden" style="width:300px; height:25px; color: white; background:#e80000; border-style: none"/><br><br>
+                    </footer> 
+                    
+                    </form>
+                    
+                    
+                    
+                    
+                      
                 </center>
 
-             
               
-
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
-      
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>Alle Angaben ohne Gewehr</h3>
+            </footer>
+        </div>
 
         
     </body>
