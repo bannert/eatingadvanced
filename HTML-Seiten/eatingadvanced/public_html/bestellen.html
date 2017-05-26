@@ -34,47 +34,83 @@ and open the template in the editor.
                 <article>
                     <header>
                         <h1>Einfach Essen bestellen - So gehts!</h1>
-                        <p>Wählen Sie zu erst den Bestellzeitraum aus und dann unter den nachfolgenden Auswahlmöglichkeiten für jeden Wochentag aus und schon sind Sie fertig !</p>
+                        <p>Wählen Sie zuerst Ihren Bestellzeitraum und entscheiden Sie unter den Auswahlmöglichkeiten des Essensangebotes - fertig!</p>
                     </header>
                     <section>
-                        <h2>Essen für Montag:</h2>
-                        <input type="radio" name="Montag" value="A" />
-                        <input type="radio" name="Montag" value="B" />
-                        <input type="radio" name="Montag" value="C" />
-                        <input type="radio" name="Montag" value="none" checked="checked" />
-                        <p>Wählen Sie ein Menü. </p>
+                        <h3>Bestellen für Kalenderwoche:
+                        <select name="Auswahl_Kalenderwoche">
+                            <option></option>
+                        </select></h3>
                     </section>
                     <section>
-                        <h2>Essen für Dienstag:</h2>
-                        <input type="radio" name="Dienstag" value="A" />
-                        <input type="radio" name="Dienstag" value="B" />
-                        <input type="radio" name="Dienstag" value="C" />
-                        <input type="radio" name="Dienstag" value="none" checked="checked" />
-                        <p>Wählen Sie ein Menü. </p>
+                        <h3>Essen für Montag:</h3>
+                        <input type="radio" id="Mo_A" name="Montag" value="A" />
+                        <label for="Mo_A"> (Essen A)</label><br>
+                        
+                        <input type="radio" id="Mo_B" name="Montag" value="B" />
+                        <label for="Mo_B"> (Essen B)</label><br>
+                        
+                        <input type="radio" id="Mo_C" name="Montag" value="C" />
+                        <label for="Mo_C"> (Essen C)</label><br>
+                        
+                        <input type="radio" id="Mo_None" name="Montag" value="none" checked="checked" />
+                        <label for="Mo_None"> Kein Essen</label><br>
                     </section>
                     <section>
-                        <h2>Essen für Mittwoch:</h2>
-                        <input type="radio" name="Mittwoch" value="A" />
-                        <input type="radio" name="Mittwoch" value="B" />
-                        <input type="radio" name="Mittwoch" value="C" />
-                        <input type="radio" name="Mittwoch" value="none" checked="checked" />
-                        <p>Wählen Sie ein Menü. </p>
+                        <h3>Essen für Dienstag:</h3>
+                        <input type="radio" id="Di_A" name="Dienstag" value="A" />
+                        <label for="Di_A"> (Essen A)</label><br>
+                        
+                        <input type="radio" id="Di_B" name="Dienstag" value="B" />
+                        <label for="Di_B"> (Essen B)</label><br>
+                        
+                        <input type="radio" id="Di_C" name="Dienstag" value="C" />
+                        <label for="Di_C"> (Essen C)</label><br>
+                        
+                        <input type="radio" id="Di_None" name="Dienstag" value="none" checked="checked" />
+                        <label for="Di_None"> Kein Essen</label><br>
                     </section>
                     <section>
-                        <h2>Essen für Donnerstag:</h2>
-                        <input type="radio" name="Donnerstag" value="A" />
-                        <input type="radio" name="Donnerstag" value="B" />
-                        <input type="radio" name="Donnerstag" value="C" />
-                        <input type="radio" name="Donnerstag" value="none" checked="checked" />
-                        <p>Wählen Sie ein Menü. </p>
+                        <h3>Essen für Mittwoch:</h3>
+                        <input type="radio" id="Mi_A" name="Mittwoch" value="A" />
+                        <label for="Mi_A"> (Essen A)</label><br>
+                        
+                        <input type="radio" id="Mi_B" name="Mittwoch" value="B" />
+                        <label for="Mi_B"> (Essen B)</label><br>
+                        
+                        <input type="radio" id="Mi_C" name="Mittwoch" value="C" />
+                        <label for="Mi_C"> (Essen C)</label><br>
+                        
+                        <input type="radio" id="Mi_None" name="Mittwoch" value="none" checked="checked" />
+                        <label for="Mi_None"> Kein Essen</label><br>
+                    </section>
+                    <section>
+                        <h3>Essen für Donnerstag:</h3>
+                        <input type="radio" id="Do_A" name="Donnerstag" value="A" />
+                        <label for="Do_A"> (Essen A)</label><br>
+                        
+                        <input type="radio" id="Do_B" name="Donnerstag" value="B" />
+                        <label for="Do_B"> (Essen B)</label><br>
+                        
+                        <input type="radio" id="Do_C" name="Donnerstag" value="C" />
+                        <label for="Do_C"> (Essen C)</label><br>
+                        
+                        <input type="radio" id="Do_None" name="Donnerstag" value="none" checked="checked" />
+                        <label for="Do_None"> Kein Essen</label><br>
                     </section>
                     <footer>
-                        <h2>Essen für Freitag:</h2>
-                        <input type="radio" name="Freitag" value="A" />
-                        <input type="radio" name="Freitag" value="B" />
-                        <input type="radio" name="Freitag" value="C" />
-                        <input type="radio" name="Freitag" value="none" checked="checked" />
-                        <p>Wählen Sie ein Menü. </p>
+                        <h3>Essen für Freitag:</h3>
+                        <input type="radio" id="Fr_A" name="Freitag" value="A" />
+                        <label for="Fr_A"> (Essen A)</label><br>
+                        
+                        <input type="radio" id="Fr_B" name="Freitag" value="B" />
+                        <label for="Fr_B"> (Essen A)</label><br>
+                        
+                        <input type="radio" id="Fr_C" name="Freitag" value="C" />
+                        <label for="Fr_C"> (Essen A)</label><br>
+                        
+                        <input type="radio" id="Fr_None" name="Freitag" value="none" checked="checked" />
+                        <label for="Fr_None"> (Essen A)</label><br>
                     </footer>
                 </article>
 
