@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Speiseplan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style1.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style2.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style3.css" type="text/css"/>
+      
+            
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  
+    </head>
+    <body>
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title"><img src="css/pictures/Profilbild_PSN.png" height="50" alt="EA"/> EatingAdvanced</h1>
+                <nav>
+                    <ul>
+                        <li ><a href="./start.html">Startseite</a></li>
+                        <li ><a href="./about.html">Über uns</a></li>
+                        <li ><a href="./login.html">Login</a></li>                                                            
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <article>
+                    <header>
+                        <h1>Erstellen Sie Ihren Speiseplan</h1>
+                        <p>Wählen Sie den Zeitraum aus und tragen dann die Menüs für den jeweiligen Tag ein - fertig!</p>
+                    </header>
+                    <section>
+                        <h3>Speiseplan für Kalenderwoche:
+                        <select name="Auswahl_Kalenderwoche">
+                            <option></option>
+                        </select></h3>
+                    </section>
+                    <section>
+                        <h3>Essen für Montag:</h3>
+                        <p>Menü A: <input type="text" name="Mo_E_A" value="" /></p>
+                        <p>Menü B: <input type="text" name="Mo_E_B" value="" /></p>
+                        <p>Menü C: <input type="text" name="Mo_E_C" value="" /></p>
+                        <!--<input name="date" id="datepicker" placeholder="Hier klicken" class="hasDatepicker" type="text">
+                        <br>                        
+                        <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: absolute; top: 280.933px; left: 40.2px; z-index: 1; display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">May</span>&nbsp;<span class="ui-datepicker-year">2017</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">6</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">13</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">19</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">20</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">26</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">27</a></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-days-cell-over  ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default ui-state-highlight ui-state-hover" href="#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2017"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div>
+                        -->
+                    </section>
+                    <section>
+                        <h3>Essen für Dienstag:</h3>
+                        <p>Menü A: <input type="text" name="Di_E_A" value="" /></p>
+                        <p>Menü B: <input type="text" name="Di_E_B" value="" /></p>
+                        <p>Menü C: <input type="text" name="Di_E_C" value="" /></p>
+                    </section>
+                    <section>
+                        <h3>Essen für Mittwoch:</h3>
+                        <p>Menü A: <input type="text" name="Mi_E_A" value="" /></p>
+                        <p>Menü B: <input type="text" name="Mi_E_B" value="" /></p>
+                        <p>Menü C: <input type="text" name="Mi_E_C" value="" /></p>
+                    </section>
+                    <section>
+                        <h3>Essen für Donnerstag:</h3>
+                        <p>Menü A: <input type="text" name="Do_E_A" value="" /></p>
+                        <p>Menü B: <input type="text" name="Do_E_B" value="" /></p>
+                        <p>Menü C: <input type="text" name="Do_E_C" value="" /></p>
+                    </section>
+                    <footer>
+                        <h3>Essen für Freitag:</h3>
+                        <p>Menü A: <input type="text" name="Fr_E_A" value="" /></p>
+                        <p>Menü B: <input type="text" name="Fr_E_B" value="" /></p>
+                        <p>Menü C: <input type="text" name="Fr_E_C" value="" /></p>
+                    </footer>
+                </article>
+
+                <aside>
+                    <h3>Zusammenfassung des Speiseplans:</h3>
+                    <p>Woche vom _ bis _:</p>
+                        <ul style="list-style-type: decimal;">
+                            <li> <p>Montag: </p> </li>
+                            <li> <p>Dienstag: </p> </li>
+                            <li> <p>Mittwoch: </p> </li>
+                            <li> <p>Donnerstag: </p> </li>
+                            <li> <p>Freitag: </p> </li> 
+                        </ul>
+                    
+                    <input style="border: none; min-height: 40px; height: auto; background-color: #7a0000;" type="submit" value="Bestellung abschicken &rAarr;" name="Bestellen" />
+                </aside>
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>Alle Angaben ohne Gewehr</h3>
+            </footer>
+        </div>
+
+    </body>
+</html>
