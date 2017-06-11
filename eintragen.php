@@ -10,36 +10,27 @@
         <link rel="stylesheet" href="/resources/demos/style.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        
-        
-        
-        
-        <script>
-        
-     $(document).ready(function() {
-  $(function() {
-    var offset = $("aside").offset();
-    var topPadding = 35;
-    var topMargin = 20;
-    var animateSpeed = 200;
-    $(window).scroll(function() {
-      if ($(window).scrollTop() > offset.top) {
-        $("aside").stop().animate({
+        <script>    
+		$(document).ready(function() {
+		$(function() {
+		var offset = $("aside").offset();
+		var topPadding = 35;
+		var topMargin = 20;
+		var animateSpeed = 200;
+		$(window).scroll(function() {
+		if ($(window).scrollTop() > offset.top) {
+			$("aside").stop().animate({
           marginTop: $(window).scrollTop() - offset.top + topPadding
         },animateSpeed);
-      } else {
+		} else {
         $("aside").stop().animate({
           marginTop: topMargin
         },animateSpeed);  
-      }
-    }); // END window scroll
-  }); // END function
-}); // END document ready
-        
-        </script>
-
-        
-        
+		}
+		}); // END window scroll
+		}); // END function
+		}); // END document ready
+        </script>    
     </head>
 <?php
 
@@ -92,94 +83,118 @@ if (isset($kw_selected)) {
     $sth = $pdo->prepare("SELECT * FROM menu WHERE KW_ID= $kw_selected AND Tag='$monday' ORDER BY Art");
     $sth->execute();
     $menus = $sth->fetchAll();
-    $menus_row_mo = $sth->rowCount();
-    if ($menus_row_mo > 0) {
+    $menus_row = $sth->rowCount();
+    if ($menus_row > 0) {
         $mo_a = $menus[0]['Bezeichnung'];
         $mo_b = $menus[1]['Bezeichnung'];
         $mo_c = $menus[2]['Bezeichnung'];
     } else {
-        //$mo_a = 'Noch kein Menü verfügbar!';
-        //$mo_b = 'Noch kein Menü verfügbar!';
-        //$mo_c = 'Noch kein Menü verfügbar!';
+        $mo_a = 'Noch kein Menü verfügbar!';
+        $mo_b = 'Noch kein Menü verfügbar!';
+        $mo_c = 'Noch kein Menü verfügbar!';
     }
     //Dienstag
     $sth = $pdo->prepare("SELECT * FROM menu WHERE KW_ID= $kw_selected and Tag='$tuesday' ORDER BY Art");
     $sth->execute();
     $menus = $sth->fetchAll();
-    $menus_row_tu = $sth->rowCount();
-    if ($menus_row_tu > 0) {
+    $menus_row = $sth->rowCount();
+    if ($menus_row > 0) {
         $tu_a = $menus[0]['Bezeichnung'];
         $tu_b = $menus[1]['Bezeichnung'];
         $tu_c = $menus[2]['Bezeichnung'];
     } else {
-        //$tu_a = 'Noch kein Menü verfügbar!';
-        //$tu_b = 'Noch kein Menü verfügbar!';
-        //$tu_c = 'Noch kein Menü verfügbar!';
+        $tu_a = 'Noch kein Menü verfügbar!';
+        $tu_b = 'Noch kein Menü verfügbar!';
+        $tu_c = 'Noch kein Menü verfügbar!';
     }
 
     //Mittwoch
     $sth = $pdo->prepare("SELECT * FROM menu WHERE KW_ID= $kw_selected and Tag='$wednesday' ORDER BY Art");
     $sth->execute();
     $menus = $sth->fetchAll();
-    $menus_row_we = $sth->rowCount();
-    if ($menus_row_we > 0) {
+    $menus_row = $sth->rowCount();
+    if ($menus_row > 0) {
         $we_a = $menus[0]['Bezeichnung'];
         $we_b = $menus[1]['Bezeichnung'];
         $we_c = $menus[2]['Bezeichnung'];
     } else {
-        //$we_a = 'Noch kein Menü verfügbar!';
-        //$we_b = 'Noch kein Menü verfügbar!';
-        //$we_c = 'Noch kein Menü verfügbar!';
+        $we_a = 'Noch kein Menü verfügbar!';
+        $we_b = 'Noch kein Menü verfügbar!';
+        $we_c = 'Noch kein Menü verfügbar!';
     }
 
     //Donnerstag
     $sth = $pdo->prepare("SELECT * FROM menu WHERE KW_ID= $kw_selected and Tag='$thursday' ORDER BY Art");
     $sth->execute();
     $menus = $sth->fetchAll();
-    $menus_row_th = $sth->rowCount();
-    if ($menus_row_th > 0) {
+    $menus_row = $sth->rowCount();
+    if ($menus_row > 0) {
         $th_a = $menus[0]['Bezeichnung'];
         $th_b = $menus[1]['Bezeichnung'];
         $th_c = $menus[2]['Bezeichnung'];
     } else {
-        //$th_a = 'Noch kein Menü verfügbar!';
-        //$th_b = 'Noch kein Menü verfügbar!';
-        //$th_c = 'Noch kein Menü verfügbar!';
+        $th_a = 'Noch kein Menü verfügbar!';
+        $th_b = 'Noch kein Menü verfügbar!';
+        $th_c = 'Noch kein Menü verfügbar!';
     }
 
     //Freitag
     $sth = $pdo->prepare("SELECT * FROM menu WHERE KW_ID= $kw_selected and Tag='$friday' ORDER BY Art");
     $sth->execute();
     $menus = $sth->fetchAll();
-    $menus_row_fr = $sth->rowCount();
-    if ($menus_row_fr > 0) {
+    $menus_row = $sth->rowCount();
+    if ($menus_row > 0) {
         $fr_a = $menus[0]['Bezeichnung'];
         $fr_b = $menus[1]['Bezeichnung'];
         $fr_c = $menus[2]['Bezeichnung'];
     } else {
-        //$fr_a = 'Noch kein Menü verfügbar!';
-        //$fr_b = 'Noch kein Menü verfügbar!';
-        //$fr_c = 'Noch kein Menü verfügbar!';
+        $fr_a = 'Noch kein Menü verfügbar!';
+        $fr_b = 'Noch kein Menü verfügbar!';
+        $fr_c = 'Noch kein Menü verfügbar!';
     }
 }	
+
+	function eintragen($dbc,$woche,$mba,$mbb,$mbc,$d){
+		$sth = $dbc->prepare("DELETE FROM menu WHERE Tag='$d'");
+		$sth->execute();
+		$sth = $dbc->prepare("INSERT INTO menu (KW_ID, Bezeichnung, Art, Tag) VALUES ($woche, '$mba', 'A', '$d')");
+		$sth->execute();
+		$sth = $dbc->prepare("INSERT INTO menu (KW_ID, Bezeichnung, Art, Tag) VALUES ($woche, '$mbb', 'B', '$d')");
+		$sth->execute();
+		$sth = $dbc->prepare("INSERT INTO menu (KW_ID, Bezeichnung, Art, Tag) VALUES ($woche, '$mbc', 'C', '$d')");
+		$sth->execute();
+	}
+	
 	if(isset($_POST['Eintragen'])){
 	//Montag eintragen
 	$mo_a = $_POST['mo_a'];
 	$mo_b =	$_POST['mo_b'];
 	$mo_c =	$_POST['mo_c'];
-
+	eintragen($pdo,$kw_selected,$mo_a,$mo_b,$mo_c,$monday);
 	
-	if ($menus_row_mo > 0) {
-	$sth = $pdo->prepare("UPDATE menu SET KW_ID=$kw_selected, Bezeichnung='$mo_a' WHERE Art='A' AND Tag='$monday'");
-    $sth->execute(); } else if ($menus_row_mo == 0) {
-	echo $mo_a;
-	echo $mo_b;
-	echo $mo_c;
-	echo $monday;
-	echo $kw_selected;
-	$sth = $pdo->prepare("INSERT INTO menu (KW_ID, Bezeichnung, Art, Tag) VALUES ($kw_selected, '$mo_a', 'A', '$monday')");
-    $sth->execute();	
-	}
+	//Dienstag
+	$tu_a = $_POST['tu_a'];
+	$tu_b =	$_POST['tu_b'];
+	$tu_c =	$_POST['tu_c'];
+	eintragen($pdo,$kw_selected,$tu_a,$tu_b,$tu_c,$tuesday);
+
+	//Mittwoch
+	$we_a = $_POST['we_a'];
+	$we_b =	$_POST['we_b'];
+	$we_c =	$_POST['we_c'];
+	eintragen($pdo,$kw_selected,$we_a,$we_b,$we_c,$wednesday);
+
+	//Donnerstag
+	$th_a = $_POST['th_a'];
+	$th_b =	$_POST['th_b'];
+	$th_c =	$_POST['th_c'];
+	eintragen($pdo,$kw_selected,$th_a,$th_b,$th_c,$thursday);
+	
+	//Freitag
+	$fr_a = $_POST['fr_a'];
+	$fr_b =	$_POST['fr_b'];
+	$fr_c =	$_POST['fr_c'];
+	eintragen($pdo,$kw_selected,$fr_a,$fr_b,$fr_c,$friday);
 }
 ?>
 	<body>   
@@ -205,7 +220,7 @@ if (isset($kw_selected)) {
                         <p>Wählen Sie den Zeitraum aus und tragen anschließend die Menüs für den jeweiligen Tag ein - fertig!</p>
                         <hr>
                     </header>
-					<form>
+					<form method="get">
                     <section>
                         <h3>Speiseplan für Kalenderwoche: </h3>
                         <select name="awkw" onchange="this.form.submit()">
