@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
     <head>
         <title>Speiseplan</title>
@@ -280,6 +283,7 @@ if (isset($kw_selected)) {
                 </ul>
 
                 <input style="border: none; min-height: 40px; height: auto; background-color: #7a0000;" type="submit" value="Speiseplan eintragen &#10132;" name="Eintragen"/>
+				
 				</form>
                 </aside>
  

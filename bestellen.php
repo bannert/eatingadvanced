@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+session_start();
+
 $pdo = new PDO('mysql:host=localhost;dbname=eatingadvanced', 'root', 'miezum22');
 $date = date('d-m-Y', time());
 $ddate = date('Y-m-d', time());
@@ -126,17 +128,6 @@ if (isset($kw_selected)) {
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             
-            
-            
-            
-            
-            
-           
-                
-                
-                
-                
-                
       $(document).ready(function() {
   $(function() {
     var offset = $("aside").offset();
@@ -169,20 +160,7 @@ if (isset($kw_selected)) {
     
     
   }); // END function
-}); // END document ready
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-  
+}); // END document ready         
         </script>
     </head>
     <body>
@@ -305,8 +283,7 @@ if (isset($kw_selected)) {
                     <li> <p>Donnerstag (<?php echo $thursday; ?>): </p> </li>
                     <li> <p>Freitag (<?php echo $friday; ?>): </p> </li> 
                 </ul>
-
-                <input style="border: none; min-height: 40px; height: auto; background-color: #7a0000;" type="submit" value="Bestellung abschicken &#10132;" name="Bestellen" />
+				<button style="border: none; min-height: 40px; height: auto; background-color: #7a0000;" type="submit">Bestellung abschicken &#10132</button>
             </aside>
         </div>
     </div>
