@@ -5,8 +5,8 @@ import smtplib
 import sys
 
 email_to = sys.argv[1]
-username = 'bannertrazer@gmail.com'
-password = 'F6Xs6aaV6U7gWjj6'
+username = 'your@emailadress.com'
+password = 'yourpassword'
 
 smtpserver = smtplib.SMTP("smtp.gmail.com", 25)
 smtpserver.ehlo()
